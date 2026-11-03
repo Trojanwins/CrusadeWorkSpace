@@ -1,0 +1,53 @@
+# Local credentials and environment files; keep only documented templates.
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.*.example
+
+# Installed dependencies and generated application runtime state.
+**/vendor/
+**/node_modules/
+**/storage/framework/cache/
+**/storage/framework/sessions/
+**/storage/framework/views/
+**/storage/logs/
+**/storage/staging/
+**/storage/development/
+**/storage/app/private/
+**/storage/app/public/
+**/bootstrap/cache/*.php
+**/__pycache__/
+**/*.py[cod]
+
+# Local databases, MariaDB test datadir, and temporary test scratch.
+**/*.sqlite
+**/*.sqlite-*
+**/*.db
+**/*.dump
+**/*.bak
+**/*.zip
+tools/mariadb-testing-data/
+tools/tmp/
+
+# AP-8 staging business-contact secrets are machine-local and live OUTSIDE the repo by
+# default (%LOCALAPPDATA%\CrusadeStagingSecrets). Guard any accidental local copies too.
+**/CrusadeStagingSecrets/
+**/ftth-contacts.env
+**/*-contacts.env
+
+# Authentication/session material and private keys.
+**/auth_info_baileys/
+**/whatsapp_sessions/
+**/wa_sessions/
+**/sessions/
+**/*.pem
+**/*.p12
+**/*.pfx
+**/*.key
+
+# Generated logs, SQL dumps and pre-change rollback copies are evidence artifacts,
+# not application source for a source-only repository.
+**/*.log
+docs/test-results/**/*.log
+docs/test-results/**/*.sql
+docs/test-results/production-local/pre-*/
